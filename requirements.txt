@@ -1,0 +1,6 @@
+# Optional — for FastAPI variant (main.py). The default runner uses stdlib only.
+# python run.py
+#
+# If you have Python 3.10–3.12 and want FastAPI:
+# fastapi>=0.115.0
+# uvicorn[standard]>=0.34.0

@@ -1,0 +1,180 @@
+{
+  "organization": "TalentBridge Staffing Solutions",
+  "last_updated": "2026-05-26T09:00:00Z",
+  "sla_days": {
+    "application_review": 3,
+    "phone_screen": 5,
+    "technical_interview": 7,
+    "hiring_manager_interview": 7,
+    "offer": 5,
+    "background_check": 10
+  },
+  "requisitions": [
+    {
+      "id": "REQ-2026-0142",
+      "title": "Senior Software Engineer",
+      "department": "Technology",
+      "client": "NovaHealth Systems",
+      "hiring_manager": "Priya Sharma",
+      "recruiter": "Jordan Lee",
+      "priority": "high",
+      "status": "open",
+      "opened_at": "2026-04-10",
+      "target_fill_date": "2026-06-15",
+      "candidates": [
+        {
+          "id": "CAND-1001",
+          "name": "Alex Morgan",
+          "stage": "technical_interview",
+          "applied_at": "2026-04-18",
+          "last_activity_at": "2026-05-20",
+          "days_in_stage": 6,
+          "score": 82,
+          "flags": [],
+          "pending_action": "Awaiting panel feedback"
+        },
+        {
+          "id": "CAND-1002",
+          "name": "Sam Rivera",
+          "stage": "application_review",
+          "applied_at": "2026-05-01",
+          "last_activity_at": "2026-05-01",
+          "days_in_stage": 25,
+          "score": 71,
+          "flags": ["aging"],
+          "pending_action": "Resume screening overdue"
+        },
+        {
+          "id": "CAND-1003",
+          "name": "Jordan Kim",
+          "stage": "offer",
+          "applied_at": "2026-03-22",
+          "last_activity_at": "2026-05-18",
+          "days_in_stage": 8,
+          "score": 91,
+          "flags": ["offer_delay"],
+          "pending_action": "Offer letter pending approval"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2026-0158",
+      "title": "Healthcare Data Analyst",
+      "department": "Healthcare",
+      "client": "MetroCare Clinics",
+      "hiring_manager": "David Okonkwo",
+      "recruiter": "Morgan Ellis",
+      "priority": "medium",
+      "status": "open",
+      "opened_at": "2026-04-22",
+      "target_fill_date": "2026-07-01",
+      "candidates": [
+        {
+          "id": "CAND-2001",
+          "name": "Taylor Brooks",
+          "stage": "hiring_manager_interview",
+          "applied_at": "2026-05-02",
+          "last_activity_at": "2026-05-15",
+          "days_in_stage": 11,
+          "score": 78,
+          "flags": ["aging", "feedback_pending"],
+          "pending_action": "HM feedback overdue 4 days"
+        },
+        {
+          "id": "CAND-2002",
+          "name": "Casey Nguyen",
+          "stage": "phone_screen",
+          "applied_at": "2026-05-10",
+          "last_activity_at": "2026-05-12",
+          "days_in_stage": 14,
+          "score": 65,
+          "flags": ["aging"],
+          "pending_action": "Schedule phone screen"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2026-0165",
+      "title": "Financial Operations Specialist",
+      "department": "Finance",
+      "client": "Summit Capital Partners",
+      "hiring_manager": "Elena Vasquez",
+      "recruiter": "Jordan Lee",
+      "priority": "high",
+      "status": "open",
+      "opened_at": "2026-05-05",
+      "target_fill_date": "2026-06-30",
+      "candidates": [
+        {
+          "id": "CAND-3001",
+          "name": "Riley Chen",
+          "stage": "background_check",
+          "applied_at": "2026-04-28",
+          "last_activity_at": "2026-05-10",
+          "days_in_stage": 16,
+          "score": 88,
+          "flags": ["compliance_review"],
+          "pending_action": "Discrepancy in employment dates — verify"
+        },
+        {
+          "id": "CAND-3002",
+          "name": "Morgan Patel",
+          "stage": "application_review",
+          "applied_at": "2026-05-20",
+          "last_activity_at": "2026-05-22",
+          "days_in_stage": 4,
+          "score": 74,
+          "flags": ["protected_class_note"],
+          "pending_action": "Initial screen — use standardized rubric"
+        }
+      ]
+    },
+    {
+      "id": "REQ-2026-0130",
+      "title": "Retail Operations Manager",
+      "department": "Retail",
+      "client": "BrightMart Retail",
+      "hiring_manager": "James Wilson",
+      "recruiter": "Morgan Ellis",
+      "priority": "low",
+      "status": "on_hold",
+      "opened_at": "2026-03-01",
+      "target_fill_date": "2026-05-15",
+      "candidates": [
+        {
+          "id": "CAND-4001",
+          "name": "Jamie Foster",
+          "stage": "technical_interview",
+          "applied_at": "2026-02-15",
+          "last_activity_at": "2026-04-01",
+          "days_in_stage": 55,
+          "score": 60,
+          "flags": ["aging", "stale_requisition"],
+          "pending_action": "Requisition on hold — candidate outreach needed"
+        }
+      ]
+    }
+  ],
+  "compliance_policies": [
+    {
+      "id": "POL-001",
+      "title": "Equal Opportunity Screening",
+      "description": "All screening must use job-related criteria only. No decisions based on protected characteristics."
+    },
+    {
+      "id": "POL-002",
+      "title": "Adverse Action Documentation",
+      "description": "Rejections at offer stage or after background check require documented reason and compliance review."
+    },
+    {
+      "id": "POL-003",
+      "title": "Sensitive Data Handling",
+      "description": "Health, disability, or personal hardship disclosures must be escalated and not used in scoring."
+    },
+    {
+      "id": "POL-004",
+      "title": "High-Impact Escalation",
+      "description": "Score anomalies, conflicting feedback, or compliance flags require human recruiter approval."
+    }
+  ]
+}

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TalentBridge | Pipeline & Compliance Agents</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo-block">
+      <div class="logo-mark">TB</div>
+      <div class="logo-text">
+        <h1>TalentBridge Staffing Solutions</h1>
+        <p>Agentic AI Recruitment Support — Pipeline Insights & Escalation/Compliance</p>
+      </div>
+    </div>
+    <div class="header-actions">
+      <select id="req-filter" class="filter-select" aria-label="Filter by requisition">
+        <option value="">All Requisitions</option>
+      </select>
+      <button id="refresh-btn" class="btn" type="button">Refresh Agents</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="metrics-row" class="metrics-row">
+      <div class="loading">Loading metrics</div>
+    </div>
+
+    <nav class="agent-tabs" role="tablist">
+      <button class="tab active" data-panel="pipeline" type="button" role="tab">Pipeline Insights Agent</button>
+      <button class="tab" data-panel="escalation" type="button" role="tab">Escalation & Compliance Agent</button>
+      <button class="tab" data-panel="overview" type="button" role="tab">Combined Overview</button>
+    </nav>
+
+    <!-- Pipeline Insights Panel -->
+    <section id="panel-pipeline" class="panel active" role="tabpanel">
+      <div id="pipeline-summary" class="summary-banner">Analyzing pipeline…</div>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-header">Stage Distribution</div>
+          <div class="card-body">
+            <div id="stage-distribution" class="stage-bars"></div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-header">Bottleneck Analysis</div>
+          <div class="card-body" id="bottlenecks-list"></div>
+        </article>
+      </div>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-header">Aging Applications (SLA)</div>
+          <div class="card-body" id="aging-list"></div>
+        </article>
+        <article class="card">
+          <div class="card-header">Priority Actions</div>
+          <div class="card-body" id="priority-actions"></div>
+        </article>
+      </div>
+
+      <article class="card">
+        <div class="card-header">Role-Wise Pipeline Status</div>
+        <div class="card-body" style="max-height:none">
+          <table class="role-table">
+            <thead>
+              <tr>
+                <th>Role</th>
+                <th>Client</th>
+                <th>Candidates</th>
+                <th>Health</th>
+                <th>Recruiter</th>
+                <th>Oldest Stage</th>
+              </tr>
+            </thead>
+            <tbody id="role-table-body"></tbody>
+          </table>
+        </div>
+      </article>
+    </section>
+
+    <!-- Escalation & Compliance Panel -->
+    <section id="panel-escalation" class="panel" role="tabpanel">
+      <div id="escalation-summary" class="summary-banner">Evaluating compliance…</div>
+
+      <article class="card" style="margin-bottom:1.25rem">
+        <div class="card-header">
+          Human Review Queue
+          <span class="badge badge-critical">Human-in-the-loop</span>
+        </div>
+        <div class="card-body" id="escalation-queue" style="max-height:480px"></div>
+      </article>
+
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-header">Fairness Checks</div>
+          <div class="card-body" id="fairness-checks"></div>
+        </article>
+        <article class="card">
+          <div class="card-header">Audit Recommendations</div>
+          <div class="card-body">
+            <ul class="item-list" id="audit-recommendations"></ul>
+          </div>
+        </article>
+      </div>
+
+      <article class="card">
+        <div class="card-header">Compliance Policy Reminders</div>
+        <div class="card-body">
+          <ul class="item-list" id="policy-reminders"></ul>
+        </div>
+      </article>
+    </section>
+
+    <!-- Combined Overview -->
+    <section id="panel-overview" class="panel" role="tabpanel">
+      <div class="summary-banner">
+        This capstone prototype demonstrates two specialized agents working on shared recruitment data.
+        <strong>Pipeline Insights</strong> surfaces bottlenecks, aging applications, and role health.
+        <strong>Escalation & Compliance</strong> routes sensitive cases to recruiters with policy-backed actions and auto-hold safeguards.
+      </div>
+      <div class="grid-2">
+        <article class="card">
+          <div class="card-header" style="border-left:4px solid var(--orange-500)">Pipeline Insights Agent</div>
+          <div class="card-body">
+            <ul class="item-list">
+              <li><div class="item-title">Real-time hiring pipeline summaries</div></li>
+              <li><div class="item-title">Bottleneck analysis by stage & recruiter load</div></li>
+              <li><div class="item-title">Aging application detection vs SLA</div></li>
+              <li><div class="item-title">Role-wise status & health scoring</div></li>
+            </ul>
+          </div>
+        </article>
+        <article class="card">
+          <div class="card-header" style="border-left:4px solid var(--white)">Escalation & Compliance Agent</div>
+          <div class="card-body">
+            <ul class="item-list">
+              <li><div class="item-title">Routes sensitive & high-risk cases to humans</div></li>
+              <li><div class="item-title">Fairness checks on score/stage consistency</div></li>
+              <li><div class="item-title">Policy-linked escalation with auto-hold</div></li>
+              <li><div class="item-title">Audit recommendations for compliance</div></li>
+            </ul>
+          </div>
+        </article>
+      </div>
+      <p class="empty-state" style="margin-top:1rem">
+        Use the tabs above or filter by requisition to explore live agent output.
+        Last agent run: <span id="last-updated">—</span>
+      </p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>TalentBridge</span> Capstone Prototype · Pipeline Insights & Escalation/Compliance Agents · Human oversight required for all hiring decisions
+  </footer>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
